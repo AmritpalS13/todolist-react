@@ -1,0 +1,16 @@
+.header-transition:hover {
+    color: #0099ff;
+    border-color: #0099ff;
+    font-size: 45px;
+    transition: 1s;
+}
+.btn {
+    color: white;
+    background-color: black;
+    padding: 20px;
+    border-radius: 50px;
+}
+.btn:hover {
+    background-color:#0099ff;
+    transition: 0.7s;
+}
