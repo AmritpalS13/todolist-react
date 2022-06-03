@@ -5,7 +5,7 @@ const HeaderDisplay = ( { value } ) => {
 
     return (
         <>
-            <button className="btn" onClick={value}>Display About</button>
+            <button className="btn" onClick={value}>Add Item</button>
         </>
     );
 

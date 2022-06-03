@@ -15,7 +15,6 @@ const Header = () => {
         <div>
             <h1 className="header-transition">Header</h1>
             <HeaderDisplay value={value}/>
-            
         </div>
         
     )
