@@ -42,8 +42,11 @@ class App extends React.Component {
           completed: true,
         },
       ],
+      //lets users recover deleted items.
+      deleteList: [],
     }
 
+    this.addItem = this.addItem.bind(this);
     this.showInputMenu = this.showInputMenu.bind(this);//Toggles wether the user wants to display the inputs
     this.deleteItem = this.deleteItem.bind(this);
   }
@@ -53,9 +56,22 @@ class App extends React.Component {
       displayInput: !this.state.displayInput,
     });
   }
+  addItem(title, date) {
+    var id = Math.random() * 1000;
+    var temp = {
+      id: id,
+      title: title,
+      date: date,
+      urgent: true,
+      completed: false,
+
+    }
+    console.log("Clicked", title, date);
+  }
+  //Will update the array without the one we want to delete.
   deleteItem(id) {
     var newArray = this.state.list.filter( item => item.id != id);
-    console.log(newArray);
+    
     this.setState({
       list: newArray,
     })
@@ -67,7 +83,7 @@ class App extends React.Component {
     return(
       <div className='container'>
         <Header showInputMenu={this.showInputMenu}/>
-        {this.state.displayInput && <InputForm /> }
+        {this.state.displayInput && <InputForm addItem={this.addItem}/> }
         <ListContainer list={this.state.list} deleteItem={this.deleteItem}/>
       </div>
     )

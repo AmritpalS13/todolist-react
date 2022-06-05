@@ -8,7 +8,6 @@ const ListItem = ({ item, id, deleteItem }) => {
                 <p>{item.date}</p>
                 <button className='btn btn-list-item' onClick={() => deleteItem(item.id)}>Delete</button>
                 <label for="myCheck">checkbox</label>
-                <input type="checkbox" id='myCheck'/>
             </div>
         </div>
     )
