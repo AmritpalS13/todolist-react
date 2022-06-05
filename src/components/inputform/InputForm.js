@@ -4,7 +4,6 @@ import './inputform.css';
 const InputForm = ({ addItem }) => {
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
-
     return (
         <div className='input-form-container'>
             <p>Title: </p>

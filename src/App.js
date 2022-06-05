@@ -58,15 +58,19 @@ class App extends React.Component {
   }
   addItem(title, date) {
     var id = Math.random() * 1000;
+    var newArray = this.state.list;
     var temp = {
       id: id,
       title: title,
       date: date,
       urgent: true,
       completed: false,
-
     }
-    console.log("Clicked", title, date);
+    newArray.push(temp);
+    this.setState({
+      list: newArray,
+    })
+    
   }
   //Will update the array without the one we want to delete.
   deleteItem(id) {
