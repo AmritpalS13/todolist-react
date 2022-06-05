@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      displayInput: false,
       list: [
         {
           id: 1,
@@ -42,18 +43,32 @@ class App extends React.Component {
         },
       ],
     }
+
+    this.showInputMenu = this.showInputMenu.bind(this);//Toggles wether the user wants to display the inputs
+    this.deleteItem = this.deleteItem.bind(this);
   }
+
+  showInputMenu() {
+    this.setState({
+      displayInput: !this.state.displayInput,
+    });
+  }
+  deleteItem(id) {
+    var newArray = this.state.list.filter( item => item.id != id);
+    console.log(newArray);
+    this.setState({
+      list: newArray,
+    })
+  }
+
+
 
   render() {
     return(
       <div className='container'>
-        <Header />
-        {/**
-         * input form and append the array,
-         */
-         }
-        <InputForm />
-        <ListContainer list={this.state.list}/>
+        <Header showInputMenu={this.showInputMenu}/>
+        {this.state.displayInput && <InputForm /> }
+        <ListContainer list={this.state.list} deleteItem={this.deleteItem}/>
       </div>
     )
   }

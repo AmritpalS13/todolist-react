@@ -1,20 +1,17 @@
 
 import React, { useState } from 'react';
 
-import HeaderDisplay from "./HeaderDisplay";
+
 import './header.css';
 
-const Header = () => {
-    //Declaring the state if the user wants to see the about section.
-    const [display, setDisplay] = useState(false);
-    const value = () => {
-        setDisplay(!display);
-        console.log(display);
-    }
+const Header = ( { showInputMenu } ) => {
+    
+
     return (
         <div>
-            <h1 className="header-transition">Header</h1>
-            <HeaderDisplay value={value}/>
+            <h1 className="header-transition">Todo List - React</h1>
+            <p>By: Paul Sidhu</p>
+            <button className='btn' onClick={showInputMenu}>Add</button>
         </div>
         
     )
