@@ -14,27 +14,31 @@ class App extends React.Component {
       list: [
         {
           id: 1,
-          title: 'Do this',
+          title: 'Do This',
           date: 'June 5, 2022',
           urgent: true,
+          completed: false,
         },
         {
           id: 2,
-          title: 'Do this',
+          title: 'Walk the dog',
           date: 'June 5, 2022',
           urgent: false,
+          completed: false,
         },
         {
           id: 3,
-          title: 'Do this',
+          title: 'Go to the Grocery store',
           date: 'June 5, 2022',
           urgent: false,
+          completed: false,
         },
         {
           id: 4,
-          title: 'Do this',
+          title: 'Order new shirt',
           date: 'June 5, 2022',
           urgent: true,
+          completed: true,
         },
       ],
     }
